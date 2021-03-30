@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="d-flex justify-content-center">
+			<div class="card ms-3 me-3 mt-5 mb-3 text-center main-card" style="width: 50%;">
+				<div class="card-body">
+
+					<h1>Forgot Password</h1>
+
+					<div class="container-fluid mt-1">
+						<div class="row">
+							<div class="col-md-8 offset-md-2 mt-3">
+
+								<h4>Your Email</h4>
+								
+								<div th:if="${session.message}">
+									<div class="alert text-center"
+										th:classappend="${'alert-'+session.message.type}" role="alert">
+										<span th:text="${session.message.content}"></span>
+									</div>	
+									<th:block th:text="${#session.removeAttribute('message')}"></th:block>	
+								</div>								
+
+								<form th:action="@{/send-otp}" method="POST">
+									<div class="form-group">
+										<input type="email" class="form-control mt-3" name="email"
+											placeholder="Enter your registered email address" required />
+									</div>
+									<div class="text-center mt-3 mb-3">
+										<button type="submit" class="btn btn-success">Send OTP</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

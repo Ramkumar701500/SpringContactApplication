@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+
+		<div class="card ms-3 me-3 mt-3 mb-3 main-card">
+			<div class="card-body">
+				
+				<h1 class="text-center">Add Contact</h1>
+				
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+
+							<div th:if="${session.message}">
+
+								<div class="alert text-center"
+									th:classappend="${'alert-'+session.message.type}" role="alert">
+									<span th:text="${session.message.content}"></span>
+								</div>
+
+								<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+							</div>
+
+
+							<form th:object="${contact}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-3">
+
+
+								<div class="input-group flex-nowrap mt-3">
+									<span class="input-group-text" id="name"> <i
+										class="fas fa-user"></i>
+									</span> <input type="text" class="form-control"
+										placeholder="Enter full name" name="name" required>
+								</div>
+
+
+								<div class="input-group flex-nowrap mt-3">
+									<span class="input-group-text" id="nickName"> <i
+										class="fas fa-plus"></i>
+									</span> <input type="text" class="form-control"
+										placeholder="Enter nickname" name="nickName" required>
+								</div>
+
+
+								<div class="input-group flex-nowrap mt-3">
+									<span class="input-group-text" id="phone"> <i
+										class="fas fa-phone"></i>
+									</span> <input type="number" class="form-control"
+										placeholder="Enter phone number" name="phone" required>
+								</div>
+
+
+								<div class="input-group flex-nowrap mt-3">
+									<span class="input-group-text" id="email">@</span> <input
+										type="email" class="form-control"
+										placeholder="Enter email address" name="email" required>
+								</div>
+
+
+								<div class="input-group flex-nowrap mt-3">
+									<span class="input-group-text" id="work"> <i
+										class="fas fa-briefcase"></i>
+									</span> <input type="text" class="form-control"
+										placeholder="Enter wroking profession" name="work">
+								</div>
+
+
+								<div class="form-group mt-3">
+									<textarea id="mytextarea" name="description" rows="15"
+										class="form-control" placeholder="Write contact description"></textarea>
+								</div>
+
+
+								<div class="mt-3">
+									<label for="formFile" class="form-label text-secondary">Upload contact
+										image</label> <input class="form-control" type="file" id="formFile"
+										name="profileImage">
+								</div>
+
+
+								<div class="form-group text-center mt-3 d-grid gap-2">
+									<input type="submit" name="submit"
+										class="btn btn-success btn-lg" value="Save">
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- TinyMCE Editor Script -->
+		<script
+			src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+			referrerpolicy="origin"></script>
+
+		<script>
+      	tinymce.init
+      	({
+        	selector: '#mytextarea'
+      	});
+    	</script>
+		<!-- TinyMCE Editor Script -->
+		
+		<script>
+			$(document).ready(() => 
+			{
+				$(".item").removeClass("active");
+				$("#add-contact-link").addClass("active");
+			});	
+		</script>	
+
+	</section>
+</body>
+</html>

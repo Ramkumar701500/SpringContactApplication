@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3 mt-3 mb-3" th:if="${contact}">
+			<div class="card-body">
+
+				<h1 class="text-center">Contact Detail</h1>
+
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2 mt-1">
+
+							<!-- Update Contact Successfully Alert Message -->
+							<div th:if="${session.message}">
+								<div class="alert text-center"
+									th:classappend="${'alert-'+session.message.type}" role="alert">
+									<span th:text="${session.message.content}"></span>
+								</div>
+								<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							</div>
+							<!-- Update Contact Successfully Alert Message -->
+
+							<div class="text-center">
+								<img th:src="@{'/contact-image/' + ${contact.image}}"
+									style="height: 150px; width: 150px;" alt=""
+									class="contact-photo" />
+
+								<h3 class="mt-2" th:text="${contact.name}"></h3>
+
+								<!-- table -->
+								<div class="table-responsive mt-3" style="border-radius: 7px;">
+									<table class="table table-light table-hover">
+										<tbody>
+											<tr>
+												<th>Contact ID</th>
+												<td>CONTACT<span th:text="${contact.cId}"></span></td>
+											</tr>
+											<tr>
+												<th>Nickname</th>
+												<td><span th:text="${contact.nickName}"></span>
+											</tr>
+
+											<tr>
+												<th>Phone</th>
+												<td><span th:text="${contact.phone}"></span>
+												</th>
+											</tr>
+
+											<tr>
+												<th>Email</th>
+												<td><span th:text="${contact.email}"></span>
+												</th>
+											</tr>
+
+											<tr>
+												<th>Profession</th>
+												<td><span th:text="${contact.work}"></span>
+												</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- table -->
+							</div>
+
+							<div class="description mt-3">
+								<h4 class="text-decoration-underline text-center">Contact
+									Description</h4>
+								<th:block th:utext="${contact.description}"></th:block>
+
+								<div class="text-center mt-3 d-grid gap-2">
+									
+									<form th:action="@{'/user/update-contact/' + ${contact.cId}}"
+										method="POST">
+										<div class="text-center d-grid gap-2">
+											<button type="submit"
+												class="btn btn-success mt-1 mb-1">Update</button>
+										</div>
+									</form>
+									
+									<button th:onclick="|deleteContact(${contact.cId})|"
+										class="btn btn-danger mt-1 mb-1">Delete</button>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div th:unless="${contact}"
+			class="alert alert-danger text-center ms-3 me-3 mt-3 mb-3"
+			role="alert ">You Don't Have The Permission To See This Contact
+			!!!</div>
+
+	</section>
+</body>
+</html>

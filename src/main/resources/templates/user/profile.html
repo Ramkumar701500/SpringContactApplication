@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3 mt-3 mb-3 main-card">
+			<div class="card-body">
+
+				<h1 class="text-center">My Profile</h1>
+
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2 mt-1">
+
+							<div class="text-center">
+								<img th:src="@{'/user-image/' + ${user.imageUrl}}"
+									style="height: 150px; width: 150px;" alt=""
+									class="contact-photo" />
+
+								<h4 class="mt-1" th:text="${user.name}"></h4>
+
+								<!-- table -->
+								<div class="table-responsive mt-3" style="border-radius: 7px;">
+									<table class="table table-light table-hover">
+										<tbody>
+											<tr>
+												<th>User ID</th>
+												<td>USER<span th:text="${user.id}"></span></td>
+											</tr>
+											<tr>
+												<th>Name</th>
+												<td><span th:text="${user.name}"></span>
+											</tr>
+
+											<tr>
+												<th>Email Address</th>
+												<td><span th:text="${user.email}"></span>
+											</tr>
+
+											<tr>
+												<th>Role</th>
+												<td><span th:text="${user.role}"></span>
+											</tr>
+											
+											<tr>
+												<th>Account Active</th>
+												<td><span th:text="${user.enabled}"></span>
+											</tr>
+		
+										</tbody>
+									</table>
+								</div>
+								<!-- table -->
+							</div>
+							
+							<div class="about mt-4">
+								<h4 class="text-decoration-underline text-center">About</h4>
+								<th:block th:utext="${user.about}"></th:block>
+
+<!-- 								<div class="text-center mt-3 d-grid gap-2"> -->
+									
+<!-- 									<form th:action="@{'/user/update-contact/' + ${contact.cId}}" -->
+<!-- 										method="POST"> -->
+<!-- 										<div class="text-center d-grid gap-2"> -->
+<!-- 											<button type="submit" -->
+<!-- 												class="btn btn-success mt-1 mb-1">Update</button> -->
+<!-- 										</div> -->
+<!-- 									</form> -->
+									
+<!-- 									<button th:onclick="|deleteContact(${contact.cId})|" -->
+<!-- 										class="btn btn-danger mt-1 mb-1">Delete</button> -->
+<!-- 								</div> -->
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Tab active -->
+		<script>
+			$(document).ready(() => 
+			{
+				$(".item").removeClass("active");
+				$("#my-profile-link").addClass("active");
+			});	
+		</script>
+		<!-- Tab active -->
+
+	</section>
+</body>
+</html>

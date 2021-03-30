@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3 mt-3 mb-3 main-card">
+			<div class="card-body">
+
+				<h1 class="text-center">Smart Contact Application</h1>
+
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2 mt-3">
+
+							<div class="text-center">
+								
+								<img th:src="@{'/image/default-home.jpg'}"
+									style="height: 175px; width: 175px;" alt=""
+									class="contact-photo" />
+
+								<h3 class="mt-1" th:text="${user.name}"></h3>
+
+								<h6 class="text center mt-3 text-secondary">Welcome to
+									Smart Contact Application. Start adding your contacts on cloud
+									by using this Application. Manage your all contacts in a
+									smarter and efficient way.</h6>
+
+								<div class="form-group text-center mt-3 d-grid gap-2">
+
+									<a th:href="@{/user/add-contact}"
+										class="btn btn-warning mt-2">Add Contacts</a> 
+									
+									<a th:href="@{/user/view-contact/0}"
+										class="btn btn-warning mt-2 mb-2">View Contacts</a>
+								</div>
+								
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<!-- Tab active -->
+		<script>
+			$(document).ready(() => 
+			{
+				$(".item").removeClass("active");
+				$("#home-link").addClass("active");
+			});	
+		</script>
+		<!-- Tab active -->
+		
+	</section>
+</body>
+</html>

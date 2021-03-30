@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3 mt-3 mb-3 main-card">
+			<div class="card-body ">
+				<h1 class="text-center">Features of Smart Contact Application</h1>
+				<div class="container-fluid mt-1 text-center">
+
+					<div class="row">
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-user-edit" style="font-size: 40px"></i>
+									<h5 class="card-title">Add Contacts</h5>
+									<p class="card-text">You can Add and Save your contacts in
+										this Application in an efficient way.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/add-contact}" class="btn btn-success">Add Contact</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-address-book" style="font-size: 40px"></i>
+									<h5 class="card-title">View Contacts</h5>
+									<p class="card-text">You can View and See your all the
+										stored contacts in this Application.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/view-contact/0}" class="btn btn-success">View Contacts</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-trash-alt" style="font-size: 40px"></i>
+									<h5 class="card-title">Delete Contacts</h5>
+									<p class="card-text">You can Delete all those contacts
+										which are of no use in this Application.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/view-contact/0}" class="btn btn-success">Delete Contact</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-pencil-alt" style="font-size: 40px"></i>
+									<h5 class="card-title">Edit Contacts</h5>
+									<p class="card-text">You can Edit and Update your contact's
+										detail in this Application.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/view-contact/0}" class="btn btn-success">Edit Contact</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-search" style="font-size: 40px"></i>
+									<h5 class="card-title">Search Contacts</h5>
+									<p class="card-text">You can Search your stored contacts in
+										this Application.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/view-contact/0}" class="btn btn-success">Search Contact</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4 mt-3">
+							<div class="card">
+								<div class="card-body">
+									<i class="fas fa-wrench" style="font-size: 40px"></i>
+									<h5 class="card-title">Settings</h5>
+									<p class="card-text">You can do Settings like changing
+										the password of your Account.</p>
+									<div class="d-grid gap-2">
+										<a th:href="@{/user/settings}" class="btn btn-success">Settings</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
