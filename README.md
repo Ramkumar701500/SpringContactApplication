@@ -24,7 +24,7 @@ Users can Delete all those contacts which are of no use in this Application.
 Users can Edit and Update their contact's detail in this Application.
 
 5. Search Contacts :
-Users can Search their stored contacts in this Application by just typing few letters of contact's name.
+Users can Search their stored contacts in this Application by just typing a few letters of contact's name.
 
 6. Settings :
 Users can do Settings like changing the password of their Account.
