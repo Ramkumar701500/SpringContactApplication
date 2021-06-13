@@ -7,7 +7,7 @@ This is a Full Stack Application which I have developed using the following Tech
 4. Bootstrap
 5. HTML, CSS and JavaScript
 
-Its a Contact Application in which a user can do the following things:
+Its a Contact Application in which the users can do the following things:
 
 1. Add Contacts : 
 Users can Add and Save their contacts in this Application in an efficient way. 
