@@ -10,24 +10,24 @@ This is a Full Stack Application which I have developed using the following Tech
 Its a Contact Application in which a user can do the following things:
 
 1. Add Contacts : 
-User can Add and Save their contacts in this Application in an efficient way. 
+Users can Add and Save their contacts in this Application in an efficient way. 
 They can enter details about the contact like Name, Nickname, Mobile Number, Email, Working Profession, 
-and also Upload an Image though its not mandatory to upload image.
+and also Upload an Image though it's not mandatory to upload an image.
 
 2. View Contacts :
-User can View and See their all the stored contacts in this Application.
+Users can View and See their all the stored contacts in this Application.
 
 3. Delete Contacts :
-User can Delete all those contacts which are of no use in this Application.
+Users can Delete all those contacts which are of no use in this Application.
 
 4. Edit Contacts :
-User can Edit and Update their contact's detail in this Application.
+Users can Edit and Update their contact's detail in this Application.
 
 5. Search Contacts :
-User can Search their stored contacts in this Application by just typping few letters of contact's name.
+Users can Search their stored contacts in this Application by just typing few letters of contact's name.
 
 6. Settings :
-User can do Settings like changing the password of their Account.
+Users can do Settings like changing the password of their Account.
 
 # Project Screenshots
 
